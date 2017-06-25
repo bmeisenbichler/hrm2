@@ -1,7 +1,17 @@
 # hrm2
 
-1. Schreiben Sie bitte bei Gelegenheit ein paar Zeilen, worum es bei Ihrem Projekt geht. Sehen Sie sich dazu ein-zwei andere README-Dateien anderer Leute an, z.B. [Machine Learning for Hackers](Machine Learning for Hackers), allerdings ohne den Teil "Getting Started". (Löschen Sie dann diesen Absatz).
+Code for reading and analyzing twitter timelines
 
-1. Es fehlt auch noch die Kurz-Beschreibung (Slogan), worum es geht. Am Kopf Ihres Repos steht "No description, website, or topics provided." Rechts davon ist ein "Edit"-Button, wo Sie den Slogan Ihres Projekts eingeben können.
+This repository contains codes for "R" that allow to read in certain twitter timelines. The main targets are two analyze the number of tweets/month and the usage of certain, predefined words.
 
-1. Es fehtl auch noch eine Lizenz. Die haben wir bei der Eröffnung des Repos übersprungen. Das machen wir später gemeinsam.
+Authors
+
+    Peter Baumgartner, Head of Department of Interactive Media and Educational Technologies, Danube University Krems, Austria   http://peter.baumgartner.name/
+    Benjamin Meisenbichler, Student, Danube University Krems, Austria
+
+License
+
+#All source code is copyright (c) 2012, under the Simplified BSD License.
+#For more information on FreeBSD see: http://www.opensource.org/licenses/bsd-license.php
+
+#All images and materials produced by this code are licensed under the Creative Commons Attribution-Share Alike 3.0 United States #License: http://creativecommons.org/licenses/by-sa/3.0/us/
