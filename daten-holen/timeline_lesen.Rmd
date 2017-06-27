@@ -1,0 +1,63 @@
+---
+title: "twitter timeline tweets/month"
+output: 
+        github_document:
+        toc: yes
+        toc_depth: 4
+        pdf_document:
+        fig_caption: yes
+        number_sections: yes
+        toc: yes
+        toc_depth: 4
+Author: Benjamin Meisenbichler
+---
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+```{r loading_packages}
+library(readxl)
+library(dplyr)
+library(xlsx)
+library(tidyverse)
+library(twitteR)
+```
+
+```{r preparing_for_twitter}
+consumerKey <-  "UG1P2iVpu8PvcdxQqRTaZxNES" 
+consumerSecret <-  "PbTo5vXNJK12VlSuaQY9D9V85BkQyByzFzqh0Za6PsC0wA9C3r" 
+AccessToken <- "2565717534-Vt1lV5o4oiAKCf9p1UsHHus4dBrOvobhgCfIglW"
+AccessSecret <- "YHUnAGk8F5sfwDCydyyLNpem1L1WL9R8fqhoQrxsyGDdI"
+
+setup_twitter_oauth(consumerKey,consumerSecret,AccessToken,AccessSecret)
+
+
+user = 'umarislive' #der user muss für jeden untersuchten Account eingegeben werden
+
+
+timeline = 
+  userTimeline(
+    user,
+    n = 3200, # 3200 is the maximum number
+    maxID = NULL,
+    sinceID = NULL,
+    includeRts = TRUE,
+    excludeReplies = FALSE
+  )
+
+df.user <- twListToDF(timeline)
+
+tweets.user <- df.user[c("text", "created", "screenName")]
+
+write.xlsx(x = tweets.user, file = "../Data/twitter.xlsx",
+           sheetName = "2", col.names = TRUE, showNA = TRUE, append = TRUE) 
+#der sheetName muss für jeden Untersuchten Account um +1 erhöht werden, damit sich am Ende ein Excel-File mit x sheets ergibt
+
+```
+
+
+
+
+
+

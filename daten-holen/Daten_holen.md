@@ -1,27 +1,48 @@
----
-title: "Twitter Untersuchung PE 2.0"
-output:
-  pdf_document:
-    fig_caption: yes
-    number_sections: yes
-    toc: yes
-    toc_depth: 4
-  github_document:
-    toc: yes
-    toc_depth: 4
-Author: Benjamin Meisenbichler
----
+Twitter Untersuchung PE 2.0
+================
 
+-   [Test](#test)
 
-
-```{r load packages}
+``` r
 library(readxl)
 library(dplyr)
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 library(xlsx)
+```
+
+    ## Loading required package: rJava
+
+    ## Loading required package: xlsxjars
+
+``` r
 library(tidyverse)
 ```
 
-```{r loadfile-de}
+    ## Loading tidyverse: ggplot2
+    ## Loading tidyverse: tibble
+    ## Loading tidyverse: tidyr
+    ## Loading tidyverse: readr
+    ## Loading tidyverse: purrr
+
+    ## Conflicts with tidy packages ----------------------------------------------
+
+    ## filter(): dplyr, stats
+    ## lag():    dplyr, stats
+
+``` r
 pers_de <- read_excel(
         "../Data/Pers.xlsx",
         sheet = 1,
@@ -33,9 +54,9 @@ pers_de <- read_excel(
 set.seed(123)
 pers_de_sample <- sample_n(pers_de, 115)
 saveRDS(pers_de, file = "../Data/pers_de.rds")
-
 ```
-```{r write-table, eval=FALSE}
+
+``` r
 write.xlsx(x = pers_de_sample, file = "../Data/pers_sample.xlsx",
            sheetName = "DE", col.names = TRUE, showNA = TRUE, append = TRUE)
 write.xlsx(x = pers_at_sample, file = "../Data/pers_sample.xlsx",
@@ -44,8 +65,7 @@ write.xlsx(x = pers_ch_sample, file = "../Data/pers_sample.xlsx",
            sheetName = "CH", col.names = TRUE, showNA = TRUE, append = TRUE)
 ```
 
-
-```{r loadfile-at}
+``` r
 pers_at <- read_excel(
         "../Data/Pers.xlsx",
         sheet = 2,
@@ -57,10 +77,9 @@ pers_at <- read_excel(
 set.seed(456)
 pers_at_sample <- sample_n(pers_at, 83)
 saveRDS(pers_at, file = "../Data/pers_at.rds")
-
 ```
 
-```{r loadfile-ch}
+``` r
 pers_ch <- read_excel(
         "../Data/Pers.xlsx",
         sheet = 3,
@@ -72,7 +91,9 @@ pers_ch <- read_excel(
 set.seed(789)
 pers_ch_sample <- sample_n(pers_ch, 33)
 saveRDS(pers_ch, file = "../Data/pers_ch.rds")
-
 ```
 
+Test
+====
 
+*Test*
