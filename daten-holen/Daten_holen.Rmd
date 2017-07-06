@@ -1,12 +1,12 @@
 ---
 title: "Twitter Untersuchung PE 2.0"
 output:
+  github_document:
+    toc: yes
+    toc_depth: 4
   pdf_document:
     fig_caption: yes
     number_sections: yes
-    toc: yes
-    toc_depth: 4
-  github_document:
     toc: yes
     toc_depth: 4
 Author: Benjamin Meisenbichler
@@ -75,4 +75,6 @@ saveRDS(pers_ch, file = "../Data/pers_ch.rds")
 
 ```
 
+# Test
 
+*Test*

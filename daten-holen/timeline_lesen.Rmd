@@ -33,7 +33,7 @@ AccessSecret <- "YHUnAGk8F5sfwDCydyyLNpem1L1WL9R8fqhoQrxsyGDdI"
 setup_twitter_oauth(consumerKey,consumerSecret,AccessToken,AccessSecret)
 
 
-user = 'MibaAG' #der user muss für jeden untersuchten Account eingegeben werden
+user = 'umdde' #der user muss für jeden untersuchten Account eingegeben werden
 
 
 timeline = 
@@ -51,7 +51,7 @@ df.user <- twListToDF(timeline)
 tweets.user <- df.user[c("text", "created", "screenName")]
 
 write.xlsx(x = tweets.user, file = "../Data/twitter.xlsx",
-           sheetName = "40", col.names = TRUE, showNA = TRUE, append = TRUE) 
+           sheetName = "53", col.names = TRUE, showNA = TRUE, append = TRUE) 
 #der sheetName muss für jeden Untersuchten Account um +1 erhöht werden, damit sich am Ende ein Excel-File mit x sheets ergibt
 
 ```
